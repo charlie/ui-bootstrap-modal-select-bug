@@ -1,0 +1,13 @@
+{
+  "name": "ui-bootstrap-modal-select-bug",
+  "version": "0.0.1",
+  "devDependencies": {
+    "angular": "~1.2.14",
+    "angular-mocks": "~1.2.14",
+    "bootstrap": "~3.1.1",
+    "angular-bootstrap": "~0.10.0",
+    "angular-ui-router": "~0.2.8",
+    "angular-ui-utils": "~0.1.1"
+  },
+  "dependencies": {}
+}

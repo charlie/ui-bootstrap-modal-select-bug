@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="AppCtrl">
+  <head>
+    <script>
+      String.prototype.contains = function(string, separator){
+
+        return (separator) ? (separator + this + separator).indexOf(separator + string + separator) > -1 : String(this).indexOf(string) > -1;
+
+      };
+    </script>
+    <title>&lt;select&gt; bug with angular-ui's modal?</title>
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+  </head>
+  <body>
+    <div ui-view>
+      <p>Current selection: {{currentSelection}}</p>
+      <button ng-click="openModal()">Open the modal</button>
+      <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+          <h3>I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+          <select ng-model="selected.item" ng-options="item for item in items"></select>
+          Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    </div>
+  </body>
+</html>
